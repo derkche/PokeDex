@@ -1,59 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>     
-<h1>Pokemon Trainer Registration</h1>
-<body>
-    <form autocomplete="off" action="/action_page.php">
-      <div class="autocomplete" style="width:300px;">
-        <input id="username" type="text" name="username" placeholder="Username">
-      </div>
-      <input type="submit">
-    </form>
-    <br>
-<!--Make sure the form has the autocomplete function switched off:-->
-<form autocomplete="off" action="/action_page.php">
-  <div class="autocomplete" style="width:300px;">
-    <input id="myInput" type="text" name="myPokemon" placeholder="Pokemon">
-  </div>
-</form>
-<br>
-<form autocomplete="off" action="/action_page.php">
-  <div class="autocomplete" style="width:300px;">
-    <input id="myInput2" type="text" name="myPokemon" placeholder="Pokemon">
-  </div>
-</form>
-<br>
-<form autocomplete="off" action="/action_page.php">
-  <div class="autocomplete" style="width:300px;">
-    <input id="myInput3" type="text" name="myPokemon" placeholder="Pokemon">
-  </div>
-</form>
-<br>
-<form autocomplete="off" action="/action_page.php">
-  <div class="autocomplete" style="width:300px;">
-    <input id="myInput4" type="text" name="myPokemon" placeholder="Pokemon">
-  </div>
-</form>
-<br>
-<form autocomplete="off" action="/action_page.php">
-  <div class="autocomplete" style="width:300px;">
-    <input id="myInput5" type="text" name="myPokemon" placeholder="Pokemon">
-  </div>
-</form>
-<br>
-<form autocomplete="off" action="/action_page.php">
-  <div class="autocomplete" style="width:300px;">
-    <input id="myInput6" type="text" name="myPokemon" placeholder="Pokemon">
-  </div>
-</form>
-<br>
-<input type="image" src="images/pokeball.png" />
-
-<script>
 function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
   the text field element and an array of possible autocompleted values:*/
@@ -82,7 +26,7 @@ function autocomplete(inp, arr) {
           b.innerHTML += arr[i].substr(val.length);
           /*insert a input field that will hold the current array item's value:*/
           b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-          /*execute a function when someone clicks on the item value (DIV elemen t):*/
+          /*execute a function when someone clicks on the item value (DIV element):*/
           b.addEventListener("click", function(e) {
               /*insert the value for the autocomplete text field:*/
               inp.value = this.getElementsByTagName("input")[0].value;
@@ -150,7 +94,6 @@ function autocomplete(inp, arr) {
       closeAllLists(e.target);
       });
 }
-
 var pokemon = ["None","Bulbasaur", "Ivysaur","Venusaur","Charmander","Charmeleon","Charizard","Squirtle","Wartortle","Blastoise","Caterpie","Metapod","Butterfree","Weedle","Kakuuna","Beedrill","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate","Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu","Sandshrew","Sandslash","Nidoran♀", "Nidorina","Nidoqueen","Nidoran♂","Nidorino","Nidoking","Clefairy","Clefable","Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat","Oddish","Gloom","Vileplume","Paras","Parasect","Venonat","Venomoth","Diglett","Dugtrio","Meowth","Persian","Psyduck","Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra","Alakazam","Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel","Geodude","Graveler","Golem","Ponyta","Rapidash","Slowpoke","Slowbro","Magnemite","Magneton","Farfetchd","Duduo","Dodrio","Seel","Dewgong","Grimer","Muk","Shellder","Cloyster","Ghastly","Haunter","Gengar","Onix","Drowzee","Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor","Cubone","Marowak","Hitmonlee","Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn","Rhydon","Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie","Mr.Mime","Scyther","Jinx","Electabuzz","Magmar","Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon","Porygon","Omanyte","Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Draginair","Dragonite","Mewtwo","Mew"];
 
 autocomplete(document.getElementById("myInput"), pokemon);
@@ -159,8 +102,3 @@ autocomplete(document.getElementById("myInput3"), pokemon);
 autocomplete(document.getElementById("myInput4"), pokemon);
 autocomplete(document.getElementById("myInput5"), pokemon);
 autocomplete(document.getElementById("myInput6"), pokemon);
-
-</script>
-
-</body>
-</html>

@@ -1,52 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Link to Bootstrap -->
+    <!-- link to Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- link to style sheet -->
-    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- link to css for the autocompletebar -->
+    <link rel="stylesheet" href="./css/styles-autocompletebar.css">
 
     <title>Pokedex</title>
 </head>
 
 <body background="./assets/images/HappyAcidBG.png">
 
-    <!-- <video autoplay muted loop id="myVideo">
-        <source src="./assets/images/Pokemon-BG-Animated.mp4" type="video/mp4">
-    </video> -->
+    <img src="./assets/images/PokeDex-TopBorder-V2.png" alt="pokedex-top-piece" id="top-border">
 
-    <img src="./assets/images/PokeDex-TopBorder-V2.png" alt="pokedex-top-piece">
+    <img src="./assets/images/PokeDex-BottomBorder.png" alt="pokedexbottomborder" id="bottom-border">
 
-    <div class="footer">
-        <p>Footer</p>
-    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <div class="container">
         <div class="row text-center">
+
             <div class="col-sm">
-                id number, name <br>
-                picture <br>
-                type1, type2 <br>
-                toggle left, toggle right <br>
+
+                <!--Make sure the form has the autocomplete function switched off-->
+                <form autocomplete="off" action="/action_page.php">
+                    <div class="autocomplete" style="width:310px;">
+                        <input id="myInput" type="text" name="myPokemon" placeholder="Pokemon">
+                    </div>
+                    <input type="submit">
+                </form>
+
+                <br>
+
+                <!-- links to the auto-completing script for the dropdown box-->
+                <script src="./js/pokemon-autocomplete-script.js"></script>
+
+                <div class="left-panel-parent">
+                    <img id="pokedex-left-panel" src="./assets/images/Pokedex-Left-Panel.png" alt="picture-screen">
+
+                    <img id="pokemon-display" src="./assets/images/025.png" alt="">
+
+                    <div id="left-toggle">left toggle</div>
+                    <div id="right-toggle">right toggle</div>
+                </div>
+
             </div>
 
             <div class="col-sm">
-                hp <br>
-                attack <br>
-                defense <br>
-                speed <br>
-                special attack <br>
-                special defense <br>
-                total <br>
+                    <div class="right-panel-parent">
+                            <img src="assets/images/Pokedex-Right-Panel.png" alt="">
+                            <div id="radar-chart">Radar-Chart</div> <br>
+                            <div id="type1">type1</div>
+                            <div id="type2">type2</div>
+
+                    </div>
 
             </div>
+
         </div>
     </div>
-    
+
+
+
 </body>
 
 </html>
