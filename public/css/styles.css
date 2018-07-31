@@ -1,4 +1,4 @@
-#myVideo {
+#background-animation {
     position: fixed;
     right: 0;
     bottom: -60px;
@@ -7,31 +7,79 @@
     z-index: -1;
 }
 
-#logoimg {
+#pokemon-logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
     z-index: 0;
 }
 
-.footer {
+#top-border {
+    position:fixed;
+}
+
+#bottom-border {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
-    padding-top: 45px;
-    background-color: #dc0a2d;
+    /* width: 100%; */
+    /* padding-top: 45px; */
+    /* background-color: #dc0a2d; */
     color: white;
     text-align: center;
- }
-
-#registerContainer {
-    /* background-color:rgb(190, 190, 190); */
-    /* opacity: 0.5; */
-    /* border-radius:1; */
 }
 
-#pokedexContainer {
-    /* background-color:rgb(190, 190, 190); */
-    /* opacity: 0.5; */
+.left-panel-parent {
+    position: relative;
+    top: 0;
+    left: 0;
 }
+#pokedex-left-panel {
+    position: relative;
+    top: 0;
+    left: 0;
+    height:550px;
+}
+#pokemon-display {
+    position: absolute;
+    top: 25px;
+    left: 75px;
+    height:400px;
+}
+#left-toggle{
+    position: absolute;
+    top: 475px;
+    left: 175px;
+    /* height:400px; */
+}
+#right-toggle{
+    position: absolute;
+    top: 475px;
+    left: 285px;
+    /* height:400px; */
+}
+
+.right-panel-parent {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#radar-chart {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    /* height:400px; */
+}
+#type1 {
+    position: absolute;
+    top: 600px;
+    left: 50px;
+    /* height:400px; */
+}
+#type2 {
+    position: absolute;
+    top: 600px;
+    left: 300px;
+    /* height:400px; */
+}
+
