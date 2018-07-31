@@ -1,12 +1,29 @@
 module.exports = function(sequelize, DataTypes){
-	var users = sequelize.define("users", {
+	var Users = sequelize.define("users", {
 		name: {
 			type: DataTypes.STRING,
 			validate: {
 				allowNull: false,
 			}
+		},
+		pokemon1: {
+			type: DataTypes.STRING
+		},
+		pokemon2: {
+			type: DataTypes.STRING
+		},
+		pokemon3: {
+			type: DataTypes.STRING
+		},
+		pokemon4: {
+			type: DataTypes.STRING
+		},
+		pokemon5: {
+			type: DataTypes.STRING
+		},pokemon6: {
+			type: DataTypes.STRING
 		}
-		// add in a foreign key for each of the six pokemon that a user chooses.
+		
     });
-    return users;
+    return Users;
 };
