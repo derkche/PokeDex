@@ -82,4 +82,8 @@
     left: 300px;
     /* height:400px; */
 }
+#myChart {
+    height: 60vh;
+    width: 30vw;
+}
 
