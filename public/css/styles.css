@@ -40,7 +40,7 @@
     left: 0;
     height:550px;
 }
-#pokemon-display {
+#pokemon_display {
     position: absolute;
     top: 25px;
     left: 75px;
