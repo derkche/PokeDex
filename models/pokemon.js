@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes){
-    var Pokemon = sequelize.define("pokemon", {
+    var Pokemon = sequelize.define("Pokemon", {
         number: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             validate: {
                 allowNull: false,
             }
@@ -25,49 +25,49 @@ module.exports = function(sequelize, DataTypes){
             }
         },
         total: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             validate: {
                 allowNull: false,
             }
         },
         hp: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             validate: {
                 allowNull: false,
             }
         },
         attack: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             validate: {
                 allowNull: false,
             }
         },
         defense: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             validate: {
                 allowNull: false,
             }
         },
         special_attack: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             validate: {
                 allowNull: false,
             }
         },
         special_defense: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             validate: {
                 allowNull: false,
             }
         },
         speed: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             validate: {
                 allowNull: false,
             }
         },
         generation: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             validate: {
                 allowNull: false,
             }

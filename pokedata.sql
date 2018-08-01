@@ -1,4 +1,6 @@
-INSERT INTO pokedex (number, name, type1, type2, total, hp, attack, defense, special_attack, special_defense, speed, generation, legendary, sprite, image)
+USE pokedex;
+
+INSERT INTO pokemons (number, name, type1, type2, total, hp, attack, defense, special_attack, special_defense, speed, generation, legendary, sprite, image)
 VALUES
 (1,"Bulbasaur","Grass","Poison",318,45,49,49,65,65,45,1,False, "https://i.imgur.com/6Uwwssv.png", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"),
 (2,"Ivysaur","Grass","Poison",405,60,62,63,80,80,60,1,False, "https://i.imgur.com/Fx2UDXf.png", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png"),
