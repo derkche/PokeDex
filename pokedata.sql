@@ -151,4 +151,5 @@ VALUES
 (147,"Dratini","Dragon","",300,41,64,45,50,50,50,1,False, "https://i.imgur.com/yQAJjDm.png", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/147.png"),
 (148,"Dragonair","Dragon","",420,61,84,65,70,70,70,1,False, "https://i.imgur.com/JOR9v6p.png", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/148.png"),
 (149,"Dragonite","Dragon","Flying",600,91,134,95,100,100,80,1,False, "https://i.imgur.com/ekEva1h.png", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/149.png"),
-(150,"Mewtwo","Psychic","",680,106,110,90,154,90,130,1,True, "https://i.imgur.com/cPEvvD1.png", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png");
+(150,"Mewtwo","Psychic","",680,106,110,90,154,90,130,1,True, "https://i.imgur.com/cPEvvD1.png", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png"),
+(151,"Mew","Psychic","",600,100,100,100,100,100,100,1,True, "https://i.imgur.com/GatPZ3W.png", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png");

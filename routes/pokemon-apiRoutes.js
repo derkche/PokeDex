@@ -39,4 +39,12 @@ module.exports = function (app) {
             });
     });
 
+    // Get route for toggle function to go up or down one pokemon number
+    app.get("/api/id/:number", function (req, res){
+        db.Pokemon.findOne({
+            where: {number: req.params.number}
+        }).then(function (data){
+            res.json(data);
+        });
+    })
 };
