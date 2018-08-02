@@ -7,10 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- link to Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <!-- link to style sheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <!-- link to css for the autocompletebar -->
     <link rel="stylesheet" href="css/styles-autocompletebar.css">
     <!-- link to jquery -->
@@ -28,61 +27,35 @@
 
     <img src="./assets/images/PokeDex-BottomBorder.png" alt="pokedexbottomborder" id="bottom-border">
 
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div class="container">
-        <div class="row text-center">
-
-            <div class="col-sm">
-
-                <!--Make sure the form has the autocomplete function switched off-->
-                <form autocomplete="off"  id="pokemon_query">
-                    <div class="autocomplete" style="width:310px;">
-                        <input id="myInput" type="text" name="myPokemon" placeholder="Pokemon">
-                    </div>
-                    <input type="submit">
-                </form>
-
-                <br>
-
-                <!-- links to the auto-completing script for the dropdown box-->
-                <script src="./js/pokemon-autocomplete-script.js"></script>
-
-                <div class="left-panel-parent">
-                    <img id="pokedex-left-panel" src="./assets/images/Pokedex-Left-Panel.png" alt="picture-screen">
-
-                    <div class="pokemon_display"><img id="pokemon_display"  src="./assets/images/025.png" alt=""></div>
-
-                    <div id="left-toggle">click</div>
-                    <div id="right-toggle">click</div>
-                </div>
-
-            </div>
-
-            <div class="col-sm">
-                <div class="right-panel-parent">
-                    <img src="assets/images/Pokedex-Right-Panel.png" alt="">
-                    <div id="radar-chart">
-                        <canvas id="myChart"></canvas>
-                    </div>
-                    <br>
-                    <div id="type1" class="type1">type1</div>
-                    <div id="type2" class="type2">type2</div>
-
-                </div>
-
-            </div>
-
+    <!--Make sure the form has the autocomplete function switched off-->
+    <form autocomplete="off" id="pokemon_query">
+        <div class="autocomplete pkmAUTObar">
+            <input class="searchField" id="myInput" type="text" name="myPokemon" placeholder="Pokemon">
         </div>
+        <input class="pkmAUTObutton" type="submit">
+    </form>
+    <!-- links to the auto-completing script for the dropdown box-->
+    <script src="./js/pokemon-autocomplete-script.js"></script>
+
+    <img id="pokedex-left-panel" src="./assets/images/Pokedex-Left-PanelV2.png" alt="picture-screen">
+
+    <div class="pokemon_display">
+        <img id="pokemon_display" src="" alt="">
     </div>
+
+    <div id="left-toggle"><img src="./assets/images/binary-buttonsV2.png" alt=""></div>
+    <div id="right-toggle"><img src="./assets/images/binary-buttonsV2.png" alt=""></div>
+
+    <img id="pokedex-right-panel" src="assets/images/Pokedex-Right-Panel.png" alt="">
+    <img id="pokedex-right-panel-invisible-sheet" src="assets/images/invisible-sheet.png" alt="">
+
+    <div id="radar-chart">
+        <canvas id="myChart"></canvas>
+    </div>
+    
+    <div id="type1" class="type1">type1</div>
+    <div id="type2" class="type2">type2</div>
+
 
 
 

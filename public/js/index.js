@@ -14,6 +14,8 @@ $("#pokemon_query").on("submit", function (event) {
             console.log(res.type1);
             console.log(res.image);
 
+            $(".searchField").attr("placeholder", res.name); //sets the search box placeholder to the pokemons name
+
             // Setting pokemon id for toggle function
             // =======================================================
             pokemonId = res.number;
@@ -23,7 +25,7 @@ $("#pokemon_query").on("submit", function (event) {
             // =======================================================
             var pokemon_display = $("<div>");
             pokemon_display.addClass("pokemon_display");
-            pokemon_display.append("<img src='" + res.image + "'>");
+            pokemon_display.append("<img style='height:47vh;left: 17vw;top: 25vh;position: fixed;' src='" + res.image + "'>");
 
             $(".pokemon_display").html(pokemon_display);
 
@@ -106,6 +108,8 @@ $("#left-toggle").on("click", function (event) {
         type: "GET"
     }).then(
         function (res) {
+            $(".searchField").attr("placeholder", res.name); //sets the search box placeholder to the pokemons name
+
             console.log("Toggle test: " + res);
 
             // Setting pokemon id for toggle function
@@ -117,7 +121,7 @@ $("#left-toggle").on("click", function (event) {
             // =======================================================
             var pokemon_display = $("<div>");
             pokemon_display.addClass("pokemon_display");
-            pokemon_display.append("<img src='" + res.image + "'>");
+            pokemon_display.append("<img style='height:47vh;left: 17vw;top: 25vh;position: fixed;' src='" + res.image + "'>");
 
             $(".pokemon_display").html(pokemon_display);
 
@@ -196,6 +200,8 @@ $("#right-toggle").on("click", function (event) {
         type: "GET"
     }).then(
         function (res) {
+            $(".searchField").attr("placeholder", res.name); //sets the search box placeholder to the pokemons name
+
             console.log("Toggle test: " + res);
 
             // Setting pokemon id for toggle function
@@ -207,7 +213,7 @@ $("#right-toggle").on("click", function (event) {
             // =======================================================
             var pokemon_display = $("<div>");
             pokemon_display.addClass("pokemon_display");
-            pokemon_display.append("<img src='" + res.image + "'>");
+            pokemon_display.append("<img style='height:47vh;left: 17vw;top: 25vh;position: fixed;' src='" + res.image + "'>");
 
             $(".pokemon_display").html(pokemon_display);
 
@@ -284,6 +290,8 @@ $(document).ready(function () {
             type: "GET"
         }).then(
             function (res) {
+                $(".searchField").attr("placeholder", res.name); //sets the search box placeholder to the pokemons name
+
                 console.log("Toggle test: " + res);
 
                 // Setting pokemon id for toggle function
@@ -295,7 +303,7 @@ $(document).ready(function () {
                 // =======================================================
                 var pokemon_display = $("<div>");
                 pokemon_display.addClass("pokemon_display");
-                pokemon_display.append("<img src='" + res.image + "'>");
+                pokemon_display.append("<img style='height:47vh;left: 17vw;top: 25vh;position: fixed;' src='" + res.image + "'>");
 
                 $(".pokemon_display").html(pokemon_display);
 

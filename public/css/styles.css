@@ -14,76 +14,102 @@
     z-index: 0;
 }
 
-#top-border {
-    position:fixed;
-}
+/* =-=-=-=-=-=-=-=-=-=-=-=- */
 
+#top-border {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 13vh;
+}
 #bottom-border {
     position: fixed;
     left: 0;
     bottom: 0;
-    /* width: 100%; */
-    /* padding-top: 45px; */
-    /* background-color: #dc0a2d; */
-    color: white;
-    text-align: center;
+    height: 9vh;
 }
 
-.left-panel-parent {
-    position: relative;
-    top: 0;
-    left: 0;
+.pkmAUTObar{
+    position: fixed;
+    top: 14vh;
+    left: 15.2vw;
+    width: 20vw;
+}
+.searchField {
+    height: 5vh;
+}
+.pkmAUTObutton{
+    position: fixed;
+    top: 14.8vh;
+    left: 34vw;
+    width: 8.5vw;
+    height: 5vh;
 }
 #pokedex-left-panel {
-    position: relative;
-    top: 0;
-    left: 0;
-    height:550px;
+    position: fixed;
+    top: 22vh;
+    left: 15vw;
+    height: 65vh;
+    z-index: -1;
 }
-#pokemon_display {
-    position: absolute;
-    top: 25px;
-    left: 75px;
-    height:400px;
+.pokemon-display {
+    position: fixed;
+    top: 25vh;
+    left: 17vw;
+    height: 47vh;
+    z-index: 2;
 }
-#left-toggle{
-    position: absolute;
-    top: 475px;
-    left: 175px;
-    /* height:400px; */
+#pokemon-display {
+    position: fixed;
+    top: 25vh;
+    left: 17vw;
+    height: 47vh;
+    z-index: 3;
+}
+#left-toggle {
+    position: fixed;
+    top: 78vh;
+    left: 20vw;
 }
 #right-toggle{
-    position: absolute;
-    top: 475px;
-    left: 285px;
-    /* height:400px; */
+    position: fixed;
+    top: 78vh;
+    left: 30vw;
 }
 
-.right-panel-parent {
-    position: relative;
-    top: 0;
-    left: 0;
+#pokedex-right-panel {
+    position: fixed;
+    top: 22vh;
+    left: 50vw;
+    height: 65vh;
+}
+#pokedex-right-panel-invisible-sheet {
+    position: fixed;
+    top: 22vh;
+    left: 50vw;
+    height: 65vh;
+    z-index: 100;
 }
 #radar-chart {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    /* height:400px; */
-}
-#type1 {
-    position: absolute;
-    top: 600px;
-    left: 50px;
-    /* height:400px; */
-}
-#type2 {
-    position: absolute;
-    top: 600px;
-    left: 300px;
-    /* height:400px; */
+    position: fixed;
+    top: 22vh;
+    left: 51.5vw;
+    width: 25vw;
+    height: 55vh;
 }
 #myChart {
-    height: 60vh;
-    width: 30vw;
+    /* doesnt do aything, its based on the container its in aka radar chart */
+    /* height: 500vh;
+    width: 500vw; */
+}
+#type1 {
+    position: fixed;
+    top: 74vh;
+    left: 58vw;
+}
+#type2 {
+    position: fixed;
+    top: 74vh;
+    left: 67vw;
 }
 
