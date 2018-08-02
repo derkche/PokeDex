@@ -8,6 +8,9 @@
 
     <!-- link to css for the autocompletebar -->
     <link rel="stylesheet" href="./css/styles-autocompletebar.css">
+    <!-- link to css for this page's style -->
+    <link rel="stylesheet" href="css/styles-registration.css">
+
     <!-- link to jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
@@ -21,19 +24,17 @@
     </div>
     <div>
 
-  <img src= "assets/images/pikachu.png">
-
   </div>
   <div>
 </div>
-    <form autocomplete="off" action="/action_page.php">
+    <form autocomplete="off" id="user_creation">
 
         <div class="autocomplete" style="width:300px;">
           
             <input id="username" type="text" name="username" placeholder="Username">
         </div>
-</form>
-    <br>
+        <br>
+        <br>
         <div class="autocomplete" style="width:300px;">
             <input id="myInput" type="text" name="myPokemon1" placeholder="Favorite Pokemon">
 
@@ -78,7 +79,7 @@
         <input type="image" src="assets/images/pokeball.png" />
     </div>
     <div class="footer">
-        <h1>"Gotta Catch em All!</h1>
+        <h1>"Gotta Catch em All!"</h1>
     </div>
     <!-- links to the auto-completing script for the dropdown box-->
     <script src="./js/pokemon-autocomplete-script.js"></script>

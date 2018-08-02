@@ -112,4 +112,9 @@
     top: 74vh;
     left: 67vw;
 }
-
+#goHome {
+    position: fixed;
+    top: 3.3vh;
+    left: 21vw;
+    height: 6vh;
+}
