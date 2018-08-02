@@ -1,0 +1,24 @@
+body {
+    font: 16px Arial;  
+    background-image: url("../assets/images/background-register.png");
+    height:100%;    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1 {
+    color: white;    
+    left:18%;
+    position: relative;
+}
+.pokeball {
+    position: relative;
+    display: inline-block;
+    left:23%;
+}
+
+#goHome{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
