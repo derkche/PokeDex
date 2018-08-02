@@ -4,6 +4,7 @@
 
 body {
     font: 16px Arial;  
+    background-color: red;
 }
 
 .autocomplete {
@@ -22,12 +23,20 @@ input[type=text] {
     background-color: #f1f1f1;
     width: 100%;
 }
+input[type=image] {
+    background-color: red;
+}
 
 input[type=submit] {
     background-color: rgb(223, 14, 14);
     color: #fff;
     cursor: pointer;
 }
+h1 {
+    color: white;
+    text-align: center;
+}
+
 
 .autocomplete-items {
     position: absolute;
@@ -57,4 +66,7 @@ input[type=submit] {
     /*when navigating through the items using the arrow keys:*/
     background-color: DodgerBlue !important; 
     color: #ffffff; 
+}
+img{
+    float:right;
 }
