@@ -455,11 +455,11 @@ $(document).ready(function() {
                 if (users[i].name == $(selected).val()){
                     var display_pokemon = $("<div>");
                     display_pokemon.append("<p>" + users[i].pokemon1 + "</p>");
+                    display_pokemon.append("<p>" + users[i].pokemon2 + "</p>");
+                    display_pokemon.append("<p>" + users[i].pokemon3 + "</p>");
                     display_pokemon.append("<p>" + users[i].pokemon4 + "</p>");
                     display_pokemon.append("<p>" + users[i].pokemon5 + "</p>");
-                    display_pokemon.append("<p>" + users[i].pokemon2 + "</p>");
                     display_pokemon.append("<p>" + users[i].pokemon6 + "</p>");
-                    display_pokemon.append("<p>" + users[i].pokemon3 + "</p>");
 
                     $("#display_pokemon").html(display_pokemon);
                }
