@@ -4,28 +4,35 @@
 
 body {
     font: 16px Arial;  
-    background-color: red;
+background-image: url("../assets/images/background-register.png");
+height:100%;    
+background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .autocomplete {
     /*the container must be positioned relative:*/
     position: relative;
     display: inline-block;
+    left:20%;
+}
+.pokeball {
+    position: relative;
+    display: inline-block;
+    left:23%;
 }
 
 input {
     border: 1px solid transparent;
-    background-color: #f1f1f1;
     padding: 10px;
     font-size: 16px;
 }
 input[type=text] {
-    background-color: #f1f1f1;
+    background-color: ;
     width: 100%;
 }
-input[type=image] {
-    background-color: red;
-}
+
 
 input[type=submit] {
     background-color: rgb(223, 14, 14);
@@ -33,9 +40,11 @@ input[type=submit] {
     cursor: pointer;
 }
 h1 {
-    color: white;
-    text-align: center;
+    color: white;    
+    left:18%;
+    position: relative;
 }
+
 
 
 .autocomplete-items {
@@ -67,6 +76,7 @@ h1 {
     background-color: DodgerBlue !important; 
     color: #ffffff; 
 }
-img{
-    float:right;
+
+.home{
+    float: right;
 }
