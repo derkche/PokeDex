@@ -2,9 +2,7 @@ module.exports = function(sequelize, DataTypes){
 	var User = sequelize.define("User", {
 		name: {
 			type: DataTypes.STRING,
-			validate: {
-				allowNull: false,
-			}
+			allowNull: false,
 		},
 		pokemon1: {
 			type: DataTypes.STRING
@@ -20,7 +18,8 @@ module.exports = function(sequelize, DataTypes){
 		},
 		pokemon5: {
 			type: DataTypes.STRING
-		},pokemon6: {
+		},
+		pokemon6: {
 			type: DataTypes.STRING
 		}
 		

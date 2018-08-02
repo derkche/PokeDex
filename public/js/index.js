@@ -273,7 +273,7 @@ $("#right-toggle").on("click", function (event) {
         }
     );
 });
-console.log("window location: " + window.location.href.split("/").pop());
+
 
 $(document).ready(function () {
     if (window.location.href.split("/").pop() == "pokedex.html") {
@@ -363,3 +363,96 @@ $(document).ready(function () {
     }
 });
 
+
+// User Creation to POST the user data and pokemon roster to the database.
+// =======================================================
+$("#user_creation").on("submit", function (event){
+    event.preventDefault();
+
+    var createUser = {
+        name: $("#user_creation [name=username]").val().trim(),
+        pokemon1: $("#user_creation [name=myPokemon1]").val().trim(),
+        pokemon2: $("#user_creation [name=myPokemon2]").val().trim(),
+        pokemon3: $("#user_creation [name=myPokemon3]").val().trim(),
+        pokemon4: $("#user_creation [name=myPokemon4]").val().trim(),
+        pokemon5: $("#user_creation [name=myPokemon5]").val().trim(),
+        pokemon6: $("#user_creation [name=myPokemon6]").val().trim()
+    };
+    console.log(createUser);
+
+    $.ajax("api/users", {
+        type: "POST",
+        data: createUser
+    }).then(
+        function(){
+            console.log("You added user " + createUser.name);
+            location.reload();
+        }
+    );
+});
+
+// On page ready get all users to display.
+// =======================================================
+$(document).ready(function() {
+    var users = [];
+    if (window.location.href.split("/").pop() == "users.html"){
+        console.log("This if statement is working!")
+        $.ajax("api/users", {
+            type: "GET"
+        }).then(function(res){
+
+            users = [];  
+            for(i = 0; i < res.length; i++){
+                users.push({
+                    name: res[i].name,
+                    pokemon1: res[i].pokemon1,
+                    pokemon2: res[i].pokemon2,
+                    pokemon3: res[i].pokemon3,
+                    pokemon4: res[i].pokemon4,
+                    pokemon5: res[i].pokemon5,
+                    pokemon6: res[i].pokemon6
+                });
+            }
+
+            console.log(users);
+            var display_users = $("<div>");
+            display_users.addClass("display_users");
+
+            var select = $("<select id=change>");
+            for(i = 0; i < users.length; i++){
+                select.append("<option value='" + users[i].name + "'>" + users[i].name + "</option>");
+            }
+            
+            display_users.append(select);
+
+            $("#display_users").html(display_users);
+
+
+            
+        });
+
+        $("#display_users").on("change", "#change", currentValue);
+
+        function currentValue(){
+            var display_users = $($(".display_users")[0]);
+
+            var selected = $("select option:selected")[0];
+
+            console.log("SELECTED: ", selected)
+
+            for(i = 0; i < users.length; i++){
+                if (users[i].name == $(selected).val()){
+                    var display_pokemon = $("<div>");
+                    display_pokemon.append("<p>" + users[i].pokemon1 + "</p>");
+                    display_pokemon.append("<p>" + users[i].pokemon4 + "</p>");
+                    display_pokemon.append("<p>" + users[i].pokemon5 + "</p>");
+                    display_pokemon.append("<p>" + users[i].pokemon2 + "</p>");
+                    display_pokemon.append("<p>" + users[i].pokemon6 + "</p>");
+                    display_pokemon.append("<p>" + users[i].pokemon3 + "</p>");
+
+                    $("#display_pokemon").html(display_pokemon);
+               }
+            }
+        }
+    }
+});

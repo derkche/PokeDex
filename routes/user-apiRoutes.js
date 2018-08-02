@@ -7,8 +7,25 @@ module.exports = function (app) {
     // Post route that add new user into users db
 
     app.post("/api/users", function (req, res) {
-        db.Users.create(req.body).then(function (dbUser) {
-            res.json(dbUser);
+        console.log(req.body.name);
+        
+        db.User.create({
+            name: req.body.name,
+            pokemon1: req.body.pokemon1,
+            pokemon2: req.body.pokemon2,
+            pokemon3: req.body.pokemon3,
+            pokemon4: req.body.pokemon4,
+            pokemon5: req.body.pokemon5,
+            pokemon6: req.body.pokemon6
+        }).then(function(results){
+            res.end();
+        });
+    });
+
+    // Get user route to display users and pokemon.
+    app.get("/api/users", function(req, res){
+        db.User.findAll({}).then(function(results){
+            res.json(results);
         });
     });
 

@@ -22,6 +22,10 @@ app.get("/registration", function(req, res){
     res.sendFile(path.join(__dirname, "../public/registration.html"));
 });
 
+app.get("/users", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/users.html"));
+});
+
 //If no matching route is found default to home
 
 app.get("*", function(req, res){
