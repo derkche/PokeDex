@@ -1,3 +1,7 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 #background-animation {
     position: fixed;
     right: 0;
@@ -31,9 +35,10 @@
 
 .pkmAUTObar{
     position: fixed;
-    top: 14vh;
+    top: 14.8vh;
     left: 15.2vw;
     width: 20vw;
+    z-index: 5;
 }
 .searchField {
     height: 5vh;
@@ -97,11 +102,11 @@
     width: 25vw;
     height: 55vh;
 }
-#myChart {
-    /* doesnt do aything, its based on the container its in aka radar chart */
-    /* height: 500vh;
-    width: 500vw; */
-}
+/* #myChart {
+    doesnt do aything, its based on the container its in aka radar chart
+    height: 500vh;
+    width: 500vw;
+} */
 #type1 {
     position: fixed;
     top: 74vh;

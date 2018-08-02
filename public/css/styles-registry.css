@@ -2,19 +2,24 @@ body{
 background-image: url("../assets/images/registry.jpg")
 }
 h1{
-        text-align: center;
-       right:50%;
-       color:white;
-       font-size: 72px;
-    }
+    text-align: center;
+    right:50%;
+    color:white;
+    font-size: 72px;
+}
 .users{
     right:50%;
     text-align:center;
     color:white;
     font-size:72px;
 }
-.pokemon{
+.pokemon {
     right:50%;
     text-align:50%;
+}
+#goHome {
+    position: fixed;
+    top:1vh;
+    left:1vw;
 }
 
