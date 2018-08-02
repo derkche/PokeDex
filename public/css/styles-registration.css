@@ -16,6 +16,11 @@ h1 {
     display: inline-block;
     left:23%;
 }
+#submitButton {
+    position: relative;
+    width: 250px;
+    left: 21%;
+}
 
 #goHome{
     position: fixed;

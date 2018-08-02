@@ -14,7 +14,8 @@ $("#pokemon_query").on("submit", function (event) {
             console.log(res.type1);
             console.log(res.image);
 
-            $(".searchField").attr("placeholder", res.name); //sets the search box placeholder to the pokemons name
+            $("#pokemon_query")[0].reset();
+            $(".searchField").attr("placeholder", res.number+" | "+res.name); //sets the search box placeholder to the pokemons name
 
             // Setting pokemon id for toggle function
             // =======================================================
@@ -108,7 +109,8 @@ $("#left-toggle").on("click", function (event) {
         type: "GET"
     }).then(
         function (res) {
-            $(".searchField").attr("placeholder", res.name); //sets the search box placeholder to the pokemons name
+            $("#pokemon_query")[0].reset();
+            $(".searchField").attr("placeholder", res.number+" | "+res.name); //sets the search box placeholder to the pokemons name
 
             console.log("Toggle test: " + res);
 
@@ -200,7 +202,8 @@ $("#right-toggle").on("click", function (event) {
         type: "GET"
     }).then(
         function (res) {
-            $(".searchField").attr("placeholder", res.name); //sets the search box placeholder to the pokemons name
+            $("#pokemon_query")[0].reset();
+            $(".searchField").attr("placeholder", res.number+" | "+res.name); //sets the search box placeholder to the pokemons name
 
             console.log("Toggle test: " + res);
 
@@ -290,7 +293,7 @@ $(document).ready(function () {
             type: "GET"
         }).then(
             function (res) {
-                $(".searchField").attr("placeholder", res.name); //sets the search box placeholder to the pokemons name
+                $(".searchField").attr("placeholder", res.number+" | "+res.name); //sets the search box placeholder to the pokemons name
 
                 console.log("Toggle test: " + res);
 
