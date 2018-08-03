@@ -1,20 +1,18 @@
-body, html {
-    height: 100%;
-    margin: 0;
+*{
+    color: azure
 }
 
-.bg {
-    /* The image used */
-    background-image: url("img_girl.jpg");
-
-    /* Full height */
-    height: 100%; 
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#input {
+    
+    margin-top: 5px;
+    margin-left: 30px;
 }
+#choose {
+    margin-top: 5px;
+    margin-left: 30px;
+    color:black;
+}
+
 
 #landscape {
     position: fixed;
@@ -23,7 +21,17 @@ body, html {
 }
 
 #goHome {
-    height:60px;
+    position: fixed;
+    top: 60px;
+    left: 1555px;
+    height:90px;
+}
+
+#pokemon_stage_container{
+    position: fixed;
+    top: 200px;
+    left: 450px;
+    width: 800px;
 }
 
 #pokemon_stage {
@@ -31,4 +39,67 @@ body, html {
     top: 200px;
     left: 450px;
     width: 800px;
+}
+
+/* #game-div {
+    position: relative;
+    top: 200px; 
+    left: 450px;
+    width: 800px;
+} */
+
+#player1 {
+    position: fixed;
+    top: 360px; 
+    left: 600px;
+    width: 800px;
+}
+
+#player2{
+    position: fixed;
+    top: 360px; 
+    left: 1050px;
+    width: 800px;
+}
+
+#oneplayer {
+    position: fixed;
+    top: 360px; 
+    left: 600px;
+    width: 800px;
+}
+
+#twoplayer {
+    position: fixed;
+    top: 360px; 
+    left: 1050px;
+    width: 800px;
+}
+
+#chat {
+    position: fixed;
+    top: 629px; 
+    left: 700px;
+    /* width: 800px; */
+}
+
+#chat-input {
+    width: 300px;
+}
+
+#underconstruction {
+    position: fixed;
+    top: 685px; 
+    left: 750px;
+    width: 200px;
+}
+
+h1 {
+    text-align: center;
+    background-color: darkolivegreen;
+    border-bottom: solid 5px darkolivegreen;
+}
+
+#chat-send {
+    color: black;
 }

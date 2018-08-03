@@ -6,6 +6,9 @@
   <title></title>
   <!-- CSS reset sheet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
   <!-- Our Own CSS File -->
   <!-- <link rel="stylesheet" href="./css/styles-battles.css"> -->
   <link rel="stylesheet" href="./css/styles-battlesV2.css">
@@ -15,7 +18,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
 </head>
 
-<body>
+<body background="./assets/images/turf.jpg">
 
   <div id="pokemon_stage_container">
     <img id="pokemon_stage" src="./assets/images/pokemon_battle_field.png" alt="pokemonstage">
@@ -25,6 +28,8 @@
     <h1>Pokemon Battle!</h1>
   </header>
 
+<div id="input"> 
+
   <h5>
     <strong>User Name List</strong>
   </h5>
@@ -32,7 +37,7 @@
   <select data-placeholder="" class="browser-default" id="username" style="width: 180px">
     <option value="">Choose an option</option>
   </select>
-
+<br> <br>
   <h5>
     <strong>Pokemon List</strong>
   </h5>
@@ -41,6 +46,8 @@
     <option value="">Choose an option</option>
   </select>
 
+</div> 
+<br>
   <button type="button" id="choose">Start</button>
 
   <div id="game-div">
@@ -60,7 +67,7 @@
   <div id="chat">
     <div id="chat-messages"></div>
     <div id="chat-bar">
-      <input id="chat-input" />
+      <input id="chat-input">
       <button id="chat-send">Send</button>
     </div>
   </div>
@@ -75,7 +82,7 @@
     </a>
   </div>
 
-
+  <img id="underconstruction" src="./assets/images/underconstruction.gif" alt="">
 
 </body>
 
