@@ -29,6 +29,12 @@ module.exports = function (app) {
         });
     });
 
+    // app.get("/api/registration", function(req, res){
+    //     db.User.findAll({}).then(function(results){
+    //         res.json(results);
+    //     });
+    // });
+
 
     //Delete route that delete user from the users db
 

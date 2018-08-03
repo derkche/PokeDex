@@ -1,62 +1,82 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
   <meta charset="UTF-8">
   <title></title>
   <!-- CSS reset sheet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
   <!-- Our Own CSS File -->
-  <link rel="stylesheet" href="css/battle.css">
+  <!-- <link rel="stylesheet" href="./css/styles-battles.css"> -->
+  <link rel="stylesheet" href="./css/styles-battlesV2.css">
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- firebase link  -->
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
 </head>
+
 <body>
+
+  <div id="pokemon_stage_container">
+    <img id="pokemon_stage" src="./assets/images/pokemon_battle_field.png" alt="pokemonstage">
+  </div>
+
   <header>
-    <h1>Battels</h1>
+    <h1>Pokemon Battle!</h1>
   </header>
- 
-    <h5>
-      <strong>User Name List</strong>
-    </h5>
-    <br> <br>
-    <select data-placeholder="" class="browser-default" id="username" style="width: 180px">
-      <option value="">Choose an option</option>
-    </select>
-    <br> <br> <br>
-    <h5>
-      <strong>Pokemon List</strong>
-    </h5>
-    <br><br>
-    <select data-placeholder="" class="browser-default" id="pokemon" style="width: 180px">
-      <option value="">Choose an option</option>
-    </select>
-    <button type="button" id="choose">Start</button>
+
+  <h5>
+    <strong>User Name List</strong>
+  </h5>
+
+  <select data-placeholder="" class="browser-default" id="username" style="width: 180px">
+    <option value="">Choose an option</option>
+  </select>
+
+  <h5>
+    <strong>Pokemon List</strong>
+  </h5>
+
+  <select data-placeholder="" class="browser-default" id="pokemon" style="width: 180px">
+    <option value="">Choose an option</option>
+  </select>
+
+  <button type="button" id="choose">Start</button>
+
   <div id="game-div">
-      <div id="player1">
-        <p id="name1"></p>
-        <div id="p1">Player1</div>
-      </div>
-      <div id="result">
-        <p id="oneplayer"></p>
-        <p id="twoplayer"></p>
-      </div>
-      <div id="player2">
-        <p id="name2"></p>
-        <div id="p2">Player2</div>
-      </div>
-</div>
-    <div id="chat">
-      <div id="chat-messages"></div>
-      <div id="chat-bar">
-        <input id="chat-input" />
-        <button id="chat-send">Send</button>
-      </div>
+    <div id="player1">
+      <p id="name1"></p>
+      <div id="p1">Player1</div>
+    </div>
+    <div id="result">
+      <p id="oneplayer"></p>
+      <p id="twoplayer"></p>
+    </div>
+    <div id="player2">
+      <p id="name2"></p>
+      <div id="p2">Player2</div>
     </div>
   </div>
-  
-<!-- Script -->
+  <div id="chat">
+    <div id="chat-messages"></div>
+    <div id="chat-bar">
+      <input id="chat-input" />
+      <button id="chat-send">Send</button>
+    </div>
+  </div>
+  </div>
+
+  <!-- Script -->
   <script src="js/battle.js"></script>
+
+  <div id="home">
+    <a href="index.html">
+      <img src="./assets/images/home.png" href="/index.html" id="goHome">
+    </a>
+  </div>
+
+
+
 </body>
+
 </html>

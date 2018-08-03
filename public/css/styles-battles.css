@@ -228,3 +228,7 @@ li {
 #first_div {
 position: relative;
 }
+
+#goHome {
+  height:60px;
+}
