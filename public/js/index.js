@@ -429,7 +429,7 @@ $(document).ready(function() {
             var display_users = $("<div>");
             display_users.addClass("display_users");
 
-            var select = $("<select id=change>");
+            var select = $("<select id=change style='width:100px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;'>");
             for(i = 0; i < users.length; i++){
                 select.append("<option value='" + users[i].name + "'>" + users[i].name + "</option>");
             }
@@ -454,12 +454,12 @@ $(document).ready(function() {
             for(i = 0; i < users.length; i++){
                 if (users[i].name == $(selected).val()){
                     var display_pokemon = $("<div>");
-                    display_pokemon.append("<p>" + users[i].pokemon1 + "</p>");
-                    display_pokemon.append("<p>" + users[i].pokemon2 + "</p>");
-                    display_pokemon.append("<p>" + users[i].pokemon3 + "</p>");
-                    display_pokemon.append("<p>" + users[i].pokemon4 + "</p>");
-                    display_pokemon.append("<p>" + users[i].pokemon5 + "</p>");
-                    display_pokemon.append("<p>" + users[i].pokemon6 + "</p>");
+                    display_pokemon.append("<p style='background-color: grey; outline-style:solid; outline-color:darkgrey; font-family: Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;'>" + users[i].pokemon1 + "</p>");
+                    display_pokemon.append("<p style='background-color: grey; outline-style:solid; outline-color:darkgrey; font-family: Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;'>" + users[i].pokemon2 + "</p>");
+                    display_pokemon.append("<p style='background-color: grey; outline-style:solid; outline-color:darkgrey; font-family: Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;'>" + users[i].pokemon3 + "</p>");
+                    display_pokemon.append("<p style='background-color: grey; outline-style:solid; outline-color:darkgrey; font-family: Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;'>" + users[i].pokemon4 + "</p>");
+                    display_pokemon.append("<p style='background-color: grey; outline-style:solid; outline-color:darkgrey; font-family: Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;'>" + users[i].pokemon5 + "</p>");
+                    display_pokemon.append("<p style='background-color: grey; outline-style:solid; outline-color:darkgrey; font-family: Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;'>" + users[i].pokemon6 + "</p>");
 
                     $("#display_pokemon").html(display_pokemon);
                }

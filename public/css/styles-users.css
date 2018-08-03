@@ -1,0 +1,28 @@
+#header {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#display_users {
+    position: fixed;
+    top: 140px;
+    left: 450px;
+}
+#display_pokemon {
+    position: fixed;
+    top: 150px;
+    left: 490px;
+}
+#pokemon_terminal {
+    position: fixed;
+    top:70px;
+    left: -100px;
+    height: 600px;
+    z-index: -1;
+}
+
+#goHome{
+    position: fixed;
+    top: 515px;
+    left: 35px;
+    height: 80px;
+}

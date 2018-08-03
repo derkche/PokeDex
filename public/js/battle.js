@@ -45,46 +45,67 @@ for (var i = 0; i < pokemons.length; i++) {
 
 
 $("#choose").on("click", function () {
-    if (!playerOneExists && !playerOneExists && !gameOn) {
+    if (!playerOneExists && !playerTwoExists && !gameOn) {
         myFunction();
     } else if (!playerTwoExists) {
         myFunction();
-    } else { alert("Battle field is full. Try again later") }
+    }
+    else {
+
+        $("#textModal").text("Battle-field is full! Please try again later!");
+        document.getElementById("modalImg").src = "./assets/images/sorry.jpg";
+        $("#myModal").modal("toggle");
+    }
 });
 
 
 
 function myFunction() {
-    var x = document.getElementById("username").selectedIndex;
-    var y = document.getElementById("pokemon").selectedIndex;
-
+    var x = $("#username").children().filter(":selected")[0];//document.getElementById("username").selected;
+    var y = $("#pokemon").children().filter(":selected")[0];///document.getElementById("pokemon").selectedIndex;
+    console.log("X: ", x, "Y: ", y);
     if (!playerOneExists) {
-        playerOneExists = true;
-        p1name = document.getElementsByTagName("option")[x].value;
-        //  poke1name=document.getElementsByTagName("")[y].value;
-        poke1name = pokemons[y - 1];
-
-        database.ref().set({
-            p1: "health :" + playerOnehealth,
-            p2: "health :" + playerTwohealth
+        database.ref("/game/playerOne").set({
+            playerOneExists: true,
+            name: x.value,
+            pokemon: y.value,
+            playerOnehealth:100
         });
 
-        $("#name1").html(p1name);
-        $("#p1").html("<button>" + poke1name + "</button>");
+        // playerOneExists = true;
+        // p1name = document.getElementsByTagName("option")[x].value;
+        // //  poke1name=document.getElementsByTagName("")[y].value;
+        // poke1name = pokemons[y - 1];
+
+        // database.ref().set({
+        //     p1: "health :" + playerOnehealth,
+        //     p2: "health :" + playerTwohealth
+        // });
+
+        // $("#name1").html(p1name);
+        // $("#p1").html("<button>" + poke1name + "</button>");
 
     } else if (!playerTwoExists) {
-        playerTwoExists = true;
-        p2name = document.getElementsByTagName("option")[x].value;
-        poke2name = pokemons[y - 1];
-        $("#name2").html(p2name);
-        $("#p2").html("<button>" + poke2name + "</button>");
+        database.ref("/game/playerTwo").set({
+            playerTwoExists: true,
+            name: x.value,
+            pokemon: y.value,
+            // health: playerTwohealth
+            playerTwohealth:100
+        });
 
-        database.ref().set({
-            p1: "health :" + playerOnehealth,
-            p2: "health :" + playerTwohealth
-          });
+        // playerTwoExists = true;
+        // p2name = document.getElementsByTagName("option")[x].value;
+        // poke2name = pokemons[y - 1];
+        // $("#name2").html(p2name);
+        // $("#p2").html("<button>" + poke2name + "</button>");
 
-        game()
+        // database.ref().set({
+        //     p1: "health :" + playerOnehealth,
+        //     p2: "health :" + playerTwohealth
+        // });
+
+        // game()
     }
 
 }
@@ -93,8 +114,6 @@ function myFunction() {
 function game() {
     if (playerOneExists && playerTwoExists) {
         gameOn = true;
-        displayres();
-
     } else {
         myFunction();
     }
@@ -104,40 +123,63 @@ function logic() {
     $("#p1").on("click", function () {
         playerTwohealth--;
         console.log(playerTwohealth);
-        database.ref().set({
-            p1: "health :" + playerOnehealth,
-            p2: "health :" + playerTwohealth
-          });
-        displayres();
+        database.ref("/game/playerTwo").update({
+            playerTwohealth: playerTwohealth
+        });
         gameOver();
     });
+
+   
 
 
     $("#p2").on("click", function () {
         playerOnehealth--;
         console.log(playerOnehealth);
-        database.ref().set({
-            p1: "health :" + playerOnehealth,
-            p2: "health :" + playerTwohealth
+        database.ref("/game/playerOne").update({
+            playerOnehealth: playerOnehealth
         });
-        displayres();
+     
         gameOver();
 
     });
 }
 
-function displayres() {
-    $("#oneplayer").text(p1name + " health :" + playerOnehealth);
-    $("#twoplayer").text(p2name + " health :" + playerTwohealth);
-};
-
 
 function gameOver() {
+    // database.ref("/game/playerOne").set({
+       
+    // });
+
     if (playerOnehealth == 0) {
-        alert(p2name + " win");
+        database.ref("/game/playerOne").on("value", function(snapShot){
+            var obj = snapShot.val();
+        
+        if(obj.playerOnehealth == 0){
+          playerOneExists = false,
+          playerTwoExists = false
+        }
+        });
+
+        $("#textModal").text(playerTwo.name + " is " + " win");
+        document.getElementById("modalImg").src = "./assets/images/win.png";
+        $("#myModal").modal("toggle");
+
         restartGame();
     } else if (playerTwohealth == 0) {
-        alert(p1name + " win");
+        
+        database.ref("/game/playerTwo").on("value", function(snapShot){
+            var obj = snapShot.val();
+         if(obj.playerTwohealth == 0){
+          playerOneExists = false,
+          playerTwoExists = false
+        }
+        
+        });
+        
+      
+        $("#textModal").text(playerOne.name + " is " + " win");
+        document.getElementById("modalImg").src = "./assets/images/win.png";
+        $("#myModal").modal("toggle");
         restartGame();
     }
 }
@@ -163,3 +205,122 @@ function restartGame() {
 }
 
 logic();
+
+
+
+
+database.ref("/game").on("value", function (snapshot) {
+   var obj = snapshot.val();
+    p1name = obj.playerOnehealth,
+    console.log(p1name);
+    p2name = obj.playerTwohealth,
+    console.log(p2name);
+    
+   $("#oneplayer").text(snapshot.val().p1name)
+   
+    $("#twoplayer").text(snapshot.val().p2name)
+}, function (errorObject) {
+    console.log("The read failed: " + errorObject.code);
+});
+
+
+
+
+database.ref("/game/playerOne").on("value", function (snapshot) {
+    if(!snapshot.val()){
+        playerOneExists = false;
+
+        database.ref("/game/playerOne").set({
+            playerOneExists: false
+        });
+    }
+    else{
+        var obj = snapshot.val();
+
+        if(obj.playerOneExists){
+            
+            $("#name1").html(obj.name);
+            $("#p1").html("<button>" + obj.pokemon + "</button>");
+            $("#oneplayer").text(obj.name + " health :" + obj.playerOnehealth);
+            playerOneExists = true;
+            
+        }
+    }
+
+
+}, function (errorObject) {
+    console.log("The read failed: " + errorObject.code);
+});
+
+
+database.ref("/game/playerTwo").on("value", function (snapshot) {
+    if(!snapshot.val()){
+        playerTwoExists = false;
+
+        database.ref("/game/playerTwo").set({
+            playerTwoExists: false
+        });
+    }
+    else{
+        var obj = snapshot.val();
+
+        if(obj.playerTwoExists){
+            $("#name2").html(obj.name);
+            $("#p2").html("<button>" + obj.pokemon + "</button>");
+            $("#twoplayer").text(obj.name + " health :" + obj.playerTwohealth);
+            playerTwoExists = true;
+        }
+    }
+
+}, function (errorObject) {
+    console.log("The read failed: " + errorObject.code);
+});
+
+
+
+database.ref("/game").on("value", function(snapShot){
+    var obj = snapShot.val();
+
+    if(obj.player1 && obj.player2){
+        p1name = obj.playerOne.name;
+        p2name = obj.playerTwo.name;
+        game();
+    }
+})
+
+
+
+// database.ref("/game/playerOne").on("value", function(snapShot){
+//     var obj = snapShot.val();
+
+// if(obj.playerOnehealth == 0){
+//   playerOneExists = false,
+//   playerTwoExists = false
+// }
+// });
+
+
+// database.ref("/game/playerTwo").on("value", function(snapShot){
+//     var obj = snapShot.val();
+//  if(obj.playerTwohealth == 0){
+//   playerOneExists = false,
+//   playerTwoExists = false
+// }
+
+// });
+
+
+
+
+
+
+var chatName = "Guest" + Math.round(Math.random() * 100000);    //generate guest number for watchers
+
+//chat listener
+database.ref("chat").on("child_added", function (snapChat) {
+    var line = snapChat.val();
+    console.log(line);
+    $("<div>").text(line.chatName + ": " + line.chatMessage).appendTo($("#chatLog"));
+
+
+}, function (errObj) { console.log("Something went horribly wrong in chat! ErrorCode: " + errObj.code) })
